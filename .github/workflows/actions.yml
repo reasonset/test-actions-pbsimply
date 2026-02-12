@@ -20,7 +20,6 @@ jobs:
         run: |
           bundle exec pbsimply -f .
           bundle exec pbsimply -f articles
-          # 組み込みたい静的なアセットをコピーする
           rsync -r images css favicon.ico ./out/
       # 4. 生成物の処理 (例: GitHub Pagesへデプロイ、またはアーティファクト保存)
       - name: Upload artifact
