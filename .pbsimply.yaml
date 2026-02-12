@@ -6,7 +6,7 @@ outdir: ./out
 #
 # Template file path.
 # ./template.html by default.
-# template: template.erb
+template: template.erb
 # Configure the template engine/template format. The default is eruby, and liquid and mustache can be specified.
 # This setting is only effective when using a document processor that defaults to eRuby. It does not function when using a document processor that employs a different dedicated template engine (e.g., Pandoc).
 # template_format: eruby
@@ -105,7 +105,7 @@ self_url_external_prefix: https://example.com/
 #################################################
 # RedCarpet engine option
 #################################################
-# pbsimply_processor: redcarpet
+pbsimply_processor: redcarpet
 # An associative array showing the extensions to Redcarpet. See the https://github.com/vmg/redcarpet for details.
 #redcarpet_extensions: {}
 #
