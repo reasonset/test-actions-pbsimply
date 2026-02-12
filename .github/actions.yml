@@ -1,0 +1,16 @@
+name: Build Site
+on:
+  push:
+    branches: [ master ] # 自分のメインブランチ名に合わせて変更
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # 1. Rubyのセットアップ
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4' # 使用するRubyのバージョン
+          bundler-cache: true # bundle install を自動実行

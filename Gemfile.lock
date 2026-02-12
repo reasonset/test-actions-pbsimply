@@ -1,0 +1,20 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    pbsimply (3.7.0)
+    redcarpet (3.6.1)
+
+PLATFORMS
+  ruby
+  x86_64-linux
+
+DEPENDENCIES
+  pbsimply (~> 3.7)
+  redcarpet (~> 3.6)
+
+CHECKSUMS
+  pbsimply (3.7.0) sha256=2844d1910145c31e59432afb9e826e6dd3d3c4d884196ec55a940e27322aa5d0
+  redcarpet (3.6.1) sha256=d444910e6aa55480c6bcdc0cdb057626e8a32c054c29e793fa642ba2f155f445
+
+BUNDLED WITH
+  4.0.3
