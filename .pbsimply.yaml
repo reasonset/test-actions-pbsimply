@@ -1,7 +1,7 @@
 ---
 # Built documents output path.
 # ../Build means Build directory on Source document root's parent directory.
-outdir: ../Build
+outdir: ./out
 #outdir: /home/foo/public_html/
 #
 # Template file path.

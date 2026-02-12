@@ -14,3 +14,18 @@ jobs:
         with:
           ruby-version: '3.4' # 使用するRubyのバージョン
           bundler-cache: true # bundle install を自動実行
+      # 3. PureBuilder Simply によるビルド
+      # ディレクトリ構成に合わせてビルドするディレクトリを指定
+      - name: Run pbsimply build
+        run: |
+          bundle exec pbsimply -f article
+          # 他のディレクトリがあれば追加
+          # bundle exec pbsimply -f posts
+
+          # 組み込みたい静的なアセットをコピーする
+          rsync -r images css favicon.ico ./out/
+      # 4. 生成物の処理 (例: GitHub Pagesへデプロイ、またはアーティファクト保存)
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./out # .pbsimply.yaml の outdir で指定したディレクトリ
