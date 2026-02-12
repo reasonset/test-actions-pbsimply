@@ -18,6 +18,7 @@ jobs:
       # ディレクトリ構成に合わせてビルドするディレクトリを指定
       - name: Run pbsimply build
         run: |
+          bundle exec pbsimply -f .
           bundle exec pbsimply -f articles
           # 組み込みたい静的なアセットをコピーする
           rsync -r images css favicon.ico ./out/
@@ -37,8 +38,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      # - name: Checkout
-      #   users: actions/checkout@v4
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
