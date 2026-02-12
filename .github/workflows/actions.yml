@@ -26,6 +26,16 @@ jobs:
           rsync -r images css favicon.ico ./out/
       # 4. 生成物の処理 (例: GitHub Pagesへデプロイ、またはアーティファクト保存)
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./out # .pbsimply.yaml の outdir で指定したディレクトリ
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    need: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
